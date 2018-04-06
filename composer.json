@@ -1,16 +1,13 @@
 {
-    "name": "ak-el-a/yii2-commentator",
-    "description": "Yii-2 comments module",
-    "authors": [
+    
+    "repositories":
+    [
         {
-            "name": "Helen",
-            "email": "elena.motynha@gmail.com"
+            "type": "vcs",
+            "url": "http://github.com/ak-el-a/yii2-commentator"
         }
     ],
-    "minimum-stability": "dev",
-    "autoload": {
-        "psr-4": {
-            "akela\\commentator\\": ""
-        }
-    }
+    "require": {
+        "MickeyUr/yii2-commentator": "dev-master"
+    },
 }
