@@ -24,13 +24,14 @@ $this->registerJs($script, yii\web\View::POS_HEAD);
 
 <div class="comments">
     <?php if ( !empty($count) ) : ?>
-        <span class="title"><i class="fa fa-comments"></i> Комментарии (<span<?php echo $enableMicrodata ? ' itemprop="commentCount"' : '' ?> data-role="count"><?php echo $count; ?></span>):</span>
+        <span class="title"><i class="fa fa-comments"></i> <?=Yii::t('app', 'Comments')?> (<span<?php echo $enableMicrodata ? ' itemprop="commentCount"' : '' ?> data-role="count"><?php echo $count; ?></span>):</span>
     <?php endif; ?>
 
     <div data-role="tree"><?php echo $this->context->renderTree(); ?></div>
 
-    <span class="title"><i class="fa fa-comment"></i> Добавить комментарий:</span>
-    <?php echo $this->render('form', array('model' => $model, 'url' => \Yii::$app->controller->route)); ?>
+    <span class="title"><i class="fa fa-comment"></i> <?=Yii::t('app', 'Add comment')?>:</span>
+
+    <?php echo $this->render('form', array('model' => $model, 'url' => Url::to(''))); ?>
 
     <div data-role="modal-container"></div>
 </div>

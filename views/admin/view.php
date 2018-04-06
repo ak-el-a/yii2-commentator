@@ -6,7 +6,7 @@ use yii\helpers\Url;
 ?>
 
 <div class="comments admin-comments">
-<h1><i class="fa fa-search"></i> Просмотр комментария #<?php echo $model->id; ?></h1>
+<h1><i class="fa fa-search"></i> <?=Yii::t('app','View comment')?> #<?php echo $model->id; ?></h1>
 <!--    --><?php //echo \Yii::$app->getBaseUrl(true); ?>
 <!--    --><?php //echo Url::base(); ?>
 <!--    --><?php //echo Yii::$app->homeUrl; ?>
@@ -55,11 +55,11 @@ use yii\helpers\Url;
 
 
 <p class="control">
-    <?= Html::a("<i class='fa fa-list'></i> Менеджер комментариев", 'index', $options = [] )?>
+    <?= Html::a("<i class='fa fa-list'></i> ".Yii::t('app','Manager of comments'), 'index', $options = [] )?>
     |
 <!--    --><?php //echo \CHtml::link('<i class="fa fa-pencil"></i> Редактировать комментарий', array('update', 'id' => $model->id)); ?>
-    <?= Html::a("<i class='fa fa-pencil'></i> Редактировать комментарий", Url::toRoute(['update', 'id' => $model->id]), $options = [] )?>
+    <?= Html::a("<i class='fa fa-pencil'></i> ".Yii::t('app','Redactor of comments'), Url::toRoute(['update', 'id' => $model->id]), $options = [] )?>
     |
-    <?= Html::a("<i class='fa fa-cog'></i> Настройки", 'settings', $options = [] )?>
+    <?= Html::a("<i class='fa fa-cog'></i> ".Yii::t('app','Settings'), 'settings', $options = [] )?>
 </p>
 </div>

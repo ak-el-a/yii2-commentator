@@ -20,6 +20,7 @@ class AdminController extends Controller
     /**
      * Инициализация контроллера
      */
+    public $layout = 'admin';
     public function init()
     {
         parent::init();
@@ -172,7 +173,7 @@ class AdminController extends Controller
 		{
 			$model->attributes = $_POST['CommentSettings'];
 			if ( $model->save() )
-				\Yii::$app->session->setFlash('settings_saved', \Yii::t('mickeyur\commentator\Module.main', 'Settings saved successfully'));
+				\Yii::$app->session->setFlash('settings_saved', \Yii::t('app', 'Settings saved successfully'));
 		}
 
 		return $this->render('settings', ['model'=>$model]);

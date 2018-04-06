@@ -2,6 +2,7 @@
 
 namespace mickey\commentator\models\query;
 use mickey\commentator\models\Comment;
+use yii\helpers\Url;
 
 /**
  * This is the ActiveQuery class for [[\common\models\Comment]].
@@ -52,7 +53,8 @@ class CommentQuery extends \yii\db\ActiveQuery
     public function page($url='')
     {
         if ( empty($url) )
-            $url = \Yii::$app->controller->route; //url to route
+            $url = Url::to();
+            //$url = \Yii::$app->controller->route; //url to route
 
         $this->andWhere(['url' => $url]);
         $this->orderBy('created DESC'); // добавил Desc

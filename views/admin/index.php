@@ -29,10 +29,10 @@ $this->registerJs($script, yii\web\View::POS_END);
 
 <div class="comments admin-comments">
 
-<h1>Менеджер комментариев</h1>
+<h1><?=Yii::t('app','Manager of comments')?></h1>
 
 <p>
-    В поисковый запрос можно вводить условные операторы (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b> или <b>=</b>).
+    <?=Yii::t('app', 'In the search query, you can enter conditional statements')?> (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b><?=Yii::t('app', 'or')?> <b>=</b>).
 </p>
 
     <?php $form = ActiveForm::begin([
@@ -199,19 +199,19 @@ $this->registerJs($script, yii\web\View::POS_END);
 
 <p class="control">
     Статус:
-    <?= Html::dropDownList('status', '',  Comment::getStatusArray(),$params = ['prompt' => '--Выберите статус--']); ?>
-    <?= Html::submitButton('Применить', ['class' => 'ajaxUpdateStatus']) ?>
+    <?= Html::dropDownList('status', '',  Comment::getStatusArray(),$params = ['prompt' => '--'.Yii::t("app","Select a status").'--']); ?>
+    <?= Html::submitButton(Yii::t('app', 'Submit'), ['class' => 'ajaxUpdateStatus']) ?>
 <!--    --><?php //echo CHtml::ajaxSubmitButton('Применить', array('ajaxUpdateStatus'), array('success' => 'reloadGrid')); ?>
     |
-    <?= Html::submitButton('Отметить прочитанными', ['class' => 'ajaxUpdateSetOld']) ?>
+    <?= Html::submitButton(Yii::t('app', 'Mark read'), ['class' => 'ajaxUpdateSetOld']) ?>
 <!--    --><?php //echo CHtml::ajaxSubmitButton('Отметить прочитанными', array('ajaxUpdateSetOld'), array('success' => 'reloadGrid')); ?>
     |
-    <?= Html::submitButton('Отметить новыми', ['class' => 'ajaxUpdateSetNew']) ?>
+    <?= Html::submitButton(Yii::t('app', 'Mark new'), ['class' => 'ajaxUpdateSetNew']) ?>
 <!--    --><?php //echo CHtml::ajaxSubmitButton('Отметить новыми', array('ajaxUpdateSetNew'), array('success' => 'reloadGrid')); ?>
     |
-    <?php echo Html::submitButton('Удалить', array('ajaxDelete'), array(
+    <?php echo Html::submitButton(Yii::t('app', 'Delete'), array('ajaxDelete'), array(
         'beforeSend' => 'function(){
-            return confirm("' . Yii::t('mickeyur\commentator\Module.main', 'Are you sure you want to delete selected items?') . '");
+            return confirm("' . Yii::t('app', 'Are you sure you want to delete selected items?') . '");
         }',
         'success' => 'reloadGrid'
     )); ?>
@@ -222,7 +222,7 @@ $this->registerJs($script, yii\web\View::POS_END);
 //        'success' => 'reloadGrid'
 //    )); ?>
     |
-    <?= Html::a("<i class='fa fa-cog'></i> Настройки", Url::toRoute('settings'), $options = [] )?>
+    <?= Html::a("<i class='fa fa-cog'></i> ".Yii::t('app', 'Settings'), Url::toRoute('settings'), $options = [] )?>
 <!--    --><?php //echo CHtml::link('<i class="fa fa-cog"></i> Настройки', array('settings')); ?>
 </p>
 

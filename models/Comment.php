@@ -97,18 +97,18 @@ class Comment extends \yii\db\ActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'parent_id' => 'Родитель',
-			'user_id' => 'Пользователь',
+			'parent_id' => Yii::t('app', 'Parent'),
+			'user_id' => Yii::t('app', 'User'),
 			'url' => 'URL',
-			'author' => 'Автор',
+			'author' => Yii::t('app','Autor'),
 			'email' => 'Email',
-			'content' => 'Комментарий',
+			'content' => Yii::t('app','Comment'),
 			'ip' => 'IP',
-			'likes' => 'Лайки',
-			'status' => 'Статус',
-			'notify' => 'Уведомлять автора о новых комментариях?',
-			'created' => 'Создан',
-			'updated' => 'Обновлён',
+			'likes' => Yii::t('app','Likes'),
+			'status' => Yii::t('app','Status'),
+			'notify' => Yii::t('app', 'Notify the author of new comments?'),
+			'created' => Yii::t('app', 'Created'),
+			'updated' => Yii::t('app', 'Updated'),
 		);
 	}
 
@@ -418,11 +418,11 @@ class Comment extends \yii\db\ActiveRecord
         switch ($this->status)
         {
             case self::STATUS_PENDING :
-                return $translate ? \Yii::t('mickeyur\commentator\Module.main', 'pending') : 'pending';
+                return $translate ? \Yii::t('app', 'pending') : 'pending';
             case self::STATUS_APPROVED :
-                return $translate ? \Yii::t('mickeyur\commentator\Module.main', 'approved') : 'approved';
+                return $translate ? \Yii::t('app', 'approved') : 'approved';
             case self::STATUS_REJECTED :
-                return $translate ? \Yii::t('mickeyur\commentator\Module.main', 'rejected') : 'rejected';
+                return $translate ? \Yii::t('app', 'rejected') : 'rejected';
         }
     }
 
@@ -432,9 +432,9 @@ class Comment extends \yii\db\ActiveRecord
     public static function getStatusArray()
     {
         return array(
-            self::STATUS_PENDING => \Yii::t('mickeyur\commentator\Module.main', 'pending'),
-            self::STATUS_APPROVED => \Yii::t('mickeyur\commentator\Module.main', 'approved'),
-            self::STATUS_REJECTED => \Yii::t('mickeyur\commentator\Module.main', 'rejected'),
+            self::STATUS_PENDING => \Yii::t('app', 'pending'),
+            self::STATUS_APPROVED => \Yii::t('app', 'approved'),
+            self::STATUS_REJECTED => \Yii::t('app', 'rejected'),
         );
     }
 
@@ -444,8 +444,8 @@ class Comment extends \yii\db\ActiveRecord
     public static function getNotifyStatusArray()
     {
         return array(
-            self::NOTIFY => \Yii::t('mickeyur\commentator\Module.main', 'yes'),
-            self::NOT_NOTIFY => \Yii::t('mickeyur\commentator\Module.main', 'no'),
+            self::NOTIFY => \Yii::t('app', 'yes'),
+            self::NOT_NOTIFY => \Yii::t('app', 'no'),
         );
     }
 
@@ -480,7 +480,7 @@ class Comment extends \yii\db\ActiveRecord
      */
     public function getNotifyStatus()
     {
-        return $this->notify ? \Yii::t('mickeyur\commentator\Module.main', 'yes') : \Yii::t('mickeyur\commentator\Module.main', 'no');
+        return $this->notify ? \Yii::t('app', 'yes') : \Yii::t('app', 'no');
     }
 
     /**

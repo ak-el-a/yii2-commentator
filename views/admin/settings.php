@@ -5,7 +5,7 @@ use yii\helpers\Url;
 ?>
 
 <div class="comments admin-comments">
-    <h1><i class="fa fa-cogs"></i> Настройки модуля "Комментарии"</h1>
+    <h1><i class="fa fa-cogs"></i> <?=Yii::t('app','Settings of module "Comments"')?></h1>
 
     <?php if ( \Yii::$app->session->hasFlash('settings_saved') ) : ?>
         <div class="alert alert-success" data-role="alert">
@@ -15,7 +15,7 @@ use yii\helpers\Url;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <p class="note">Поля, помеченные <span class="required">*</span> обязательны для заполнения</p>
+    <p class="note"><?=Yii::t('app','Fields, marked')?> <span class="required">*</span> <?=Yii::t('app','are required')?></p>
 
 <!--    --><?php //echo $form->errorSummary($model, null, null, array('class'=>'alert alert-danger')); ?>
     <?= $form->errorSummary($model); ?>
@@ -111,9 +111,9 @@ use yii\helpers\Url;
 
         <div class="col-md-12">
             <p>
-                   <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
+                   <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>
 
-                   <?= Html::a("<i class='fa fa-list'></i> Менеджер комментариев", 'index', $options = [] )?>
+                   <?= Html::a("<i class='fa fa-list'></i> ".Yii::t('app','Manager of comments'), 'index', $options = [] )?>
             </p>
         </div>
 

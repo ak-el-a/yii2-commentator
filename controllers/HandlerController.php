@@ -67,8 +67,8 @@ class HandlerController extends Controller
             'tree' => $widget->getTree(),
             'count' => count($widget->models),
             'modal' => $this->getModal(array(
-                'title' => '<i class="fa fa-comments"></i> Комментарий успешно отправлен!',
-                'content' => '<strong>Спасибо за комментарий!</strong> Он появится после проверки модератором.'
+                'title' => '<i class="fa fa-comments"></i> ',Yii::t('app','Comment submit success!'),
+                'content' => '<strong>'.Yii::t('app', 'Thanks for the comment!').'</strong> '.Yii::t('app', 'It will appear after verification by the moderator.')
             )),
         ));
     }
@@ -130,8 +130,8 @@ class HandlerController extends Controller
                 'tree' => $widget->getTree(),
                 'count' => count($widget->models),
                 'modal' => $this->getModal(array(
-                        'title' => '<i class="fa fa-comments"></i> Комментарий успешно удалён!',
-                        'content' => 'Вместо удалённого комментария вы можете написать новый.'
+                        'title' => '<i class="fa fa-comments"></i> '.Yii::t('app', 'Comment delete success!'),
+                        'content' => Yii::t('app', 'Instead of a deleted comment, you can write a new one.')
                     )),
             ];
         }
@@ -262,7 +262,7 @@ class HandlerController extends Controller
 
         $message = $this->renderPartial('../../extensions/comments_widget/views/email/notifyAdmin', ['newComment' => $newComment], true);
 
-        $this->module->sendMail($this->module->adminEmail, 'Новый комментарий на сайте "' . \Yii::$app->name . '"', $message);
+        $this->module->sendMail($this->module->adminEmail, Yii::t('app', 'New comment on site').' "' . \Yii::$app->name . '"', $message);
     }
 
     /**
@@ -285,7 +285,7 @@ class HandlerController extends Controller
                 'hash' => $subscriber->getHash(),
             ], true);
 
-            $this->module->sendMail($subscriber->getEmail(), 'Новый комментарий на сайте "' . \Yii::$app->name . '"', $message);
+            $this->module->sendMail($subscriber->getEmail(), Yii::t('app', 'New comment on site').' "' . \Yii::$app->name . '"', $message);
         }
     }
 }

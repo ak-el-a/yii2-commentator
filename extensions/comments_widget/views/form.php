@@ -15,28 +15,28 @@ use yii\helpers\Html;
     'validateOnSubmit'      =>true
 ]); ?>
 
-<div class="row">
+<div class="row text-center">
     <?php if ( !$user = \Yii::$app->getModule('comments')->loadUser() ) : ?>
 
         <div data-role="input-container" class="form-group col-md-6">
-            <div class="input-group">
-                <span class="input-group-addon">Имя:</span>
-                <?= $form->field($model, 'author')->textInput(['class'=>'form-control', 'placeholder' => 'Введите ваше имя']) ?>
-            </div>
+
+
+                <?= $form->field($model, 'author')->textInput(['class'=>'form-control', 'placeholder' => Yii::t('app', 'Enter your name')]) ?>
+
 <!--            --><?php //echo $form->error($model, 'author', array('class' => 'text-danger')); ?>
         </div>
 
         <div data-role="input-container" class="form-group col-md-6">
-            <div class="input-group">
-                <span class="input-group-addon">E-mail:</span>
-                <?= $form->field($model, 'email')->textInput(['class'=>'form-control', 'placeholder' => 'Введите ваш e-mail']) ?>
-            </div>
+
+
+                <?= $form->field($model, 'email')->textInput(['class'=>'form-control', 'placeholder' => Yii::t('app', 'Enter your email')]) ?>
+
 <!--            --><?php //echo $form->error($model, 'email', array('class' => 'text-danger')); ?>
         </div>
 
-    <?php else : ?>
+   <?php else : ?>
         <?php $model->setScenario('authorized'); ?>
-        <div class="col-md-6">
+        <div class="col-md-12">
             <span class="username">
                 <i class="fa fa-user"></i> <?php echo $user->{\Yii::$app->getModule('comments')->usernameField}; ?>
             </span>
@@ -44,24 +44,24 @@ use yii\helpers\Html;
     <?php endif; ?>
 
     <div data-role="input-container" class="form-group col-md-12">
-        <div class="input-group">
-            <span class="input-group-addon">Комментарий:</span>
-            <?= $form->field($model, 'content')->textArea(['class'=>'form-control', 'placeholder' => 'Напишите комментарий', 'rows' => '3']) ?>
-        </div>
+
+
+            <?= $form->field($model, 'content')->textArea(['class'=>'form-control', 'placeholder' => Yii::t('app', 'Write comment'), 'rows' => '3']) ?>
+
 <!--        --><?php //echo $form->error($model, 'content', array('class' => 'text-danger')); ?>
     </div>
 
     <div class="form-group col-md-12">
         <div class="btn-group">
-            <button data-role="reply" data-is-new="<?php echo $model->isNewRecord ? 'true' : 'false' ?>" class="btn btn-success"><i class="fa fa-reply"></i> Отправить комментарий</button>
+            <button  data-role="reply" data-is-new="<?php echo $model->isNewRecord ? 'true' : 'false' ?>" class="btn btn-primary"><i class="fa fa-reply"></i> <?=Yii::t('app', 'Submit comment')?></button>
             <?php if ( !empty($cancelButton) ) : ?>
-                <button data-role="cancel" class="btn btn-danger"><i class="fa fa-times"></i> Отмена</button>
+                <button data-role="cancel" class="btn btn-danger"><i class="fa fa-times"></i> <?=Yii::t('app', 'Cancel')?></button>
             <?php endif; ?>
         </div>
-        <label class="checkbox-inline">
+        <!--<label class="checkbox-inline">
 	        <?php $model->notify = $model->isNewRecord ? 1 : $model->notify ?>
-            <?= $form->field($model, 'notify')->checkbox()?> <!--Уведомлять меня о новых комментариях-->
-        </label>
+            <?= $form->field($model, 'notify')->checkbox()?>
+        </label>-->
     </div>
 </div>
 

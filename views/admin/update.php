@@ -5,11 +5,11 @@ use yii\widgets\ActiveForm;
 ?>
 
 <div class="comments admin-comments">
-<h1><i class="fa fa-pencil"></i> Редактирование комментария #<?= $model->id; ?></h1>
+<h1><i class="fa fa-pencil"></i> <?=Yii::t('app','Redactor of comments')?> #<?= $model->id; ?></h1>
 
     <?php $form = ActiveForm::begin(['id' => 'comment-form']); ?>
 
-<p class="note">Поля, помеченные <span class="required">*</span> обязательны для заполнения</p>
+<p class="note"><?=Yii::t('app','Fields, marked')?> <span class="required">*</span> <?=Yii::t('app','are required')?></p>
 
     <?php echo $form->errorSummary($model, null, null, array('class'=>'alert alert-danger')); ?>
 
@@ -24,7 +24,7 @@ use yii\widgets\ActiveForm;
         </div>
 
         <div class="form-group">
-            <?php echo $model->getAttributeLabel('author'); ?>
+
             <?php echo !empty($model->user) ? '<small>' . $model->user->{\Yii::$app->getModule('comments')->usernameField} . '</small>' : $form->field($model, 'author')->textInput()?>
 <!--            --><?//=  ?>
 <!--            --><?php //echo $form->error($model,'author',array('class'=>'text-danger')); ?>
@@ -82,13 +82,13 @@ use yii\widgets\ActiveForm;
         </div>
 
         <p class="pull-left">
-            <?= Html::submitButton('Обновить', ['class' => 'btn btn-success']) ?>
-            <?= Html::a("<i class='fa fa-list'></i> Менеджер комментариев", 'index', $options = [] )?>
+            <?= Html::submitButton(Yii::t('app', 'Update'), ['class' => 'btn btn-success']) ?>
+            <?= Html::a("<i class='fa fa-list'></i> ".Yii::t('app','Manager of comments'), 'index', $options = [] )?>
             |
-            <?= Html::a("<i class='fa fa-search'></i> Просмотр комментария", ['view', 'id' => $model->id], $options = [] )?>
+            <?= Html::a("<i class='fa fa-search'></i> ".Yii::t('app','View comment'), ['view', 'id' => $model->id], $options = [] )?>
             |
-            Лайки: <span class="label label-primary"><?php echo $model->getLikes(); ?></span>
-            Создан: <span class="label label-success"><?php echo CHelper::date($model->created); ?></span>
+            <?=Yii::t('app', 'Likes')?>: <span class="label label-primary"><?php echo $model->getLikes(); ?></span>
+            <?=Yii::t('app', 'Created')?>: <span class="label label-success"><?php echo CHelper::date($model->created); ?></span>
             <?php if ( !empty($model->updated) ) : ?>
                 Обновлён: <span class="label label-warning"><?php echo CHelper::date($model->updated); ?></span>
             <?php endif; ?>

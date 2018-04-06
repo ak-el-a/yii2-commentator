@@ -16,18 +16,18 @@
 
         <time<?php echo $enableMicrodata ? ' itemprop="datePublished"' : '' ?> datetime="<?php echo date('Y-m-d', $comment->created) ?>" class="label label-default"><?php echo CHelper::date( $comment->created ); ?></time>
 
-        <a href="#comment_<?php echo $comment->id; ?>" class="label label-default" title="Ссылка на этот комментарий">#</a>
+        <a href="#comment_<?php echo $comment->id; ?>" class="label label-default" title="<?=Yii::t('app', 'Link to this comment')?>">#</a>
     </div>
 
     <div<?php echo $enableMicrodata ? ' itemprop="text"' : '' ?> class="content"><?php echo $comment->content; ?></div>
     <hr>
     <div class="btn-group">
-        <a href="#comment_reply" title="Ответить на этот комментарий" data-id="<?php echo $comment->id; ?>" class="btn btn-default btn-xs"><i class="fa fa-reply"></i> Ответить</a>
+        <a href="#comment_reply" title="<?=Yii::t('app', 'Reply to this comment')?>" data-id="<?php echo $comment->id; ?>" class="btn btn-default btn-xs"><i class="fa fa-reply"></i> <?=Yii::t('app', 'Reply')?></a>
         <?php if ( $comment->canUpdated() ) : ?>
-            <a href="#comment_edit" title="Редактировать" data-id="<?php echo $comment->id; ?>" class="btn btn-warning btn-xs"><i class="fa fa-pencil"></i> Редактировать</a>
+            <a href="#comment_edit" title="<?=Yii::t('app', 'Update')?>" data-id="<?php echo $comment->id; ?>" class="btn btn-warning btn-xs"><i class="fa fa-pencil"></i> <?=Yii::t('app', 'Update')?></a>
         <?php endif; ?>
         <?php if ( $comment->canDeleted() ) : ?>
-            <a href="#comment_delete" title="Удалить" data-id="<?php echo $comment->id; ?>" class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Удалить</a>
+            <a href="#comment_delete" title="<?=Yii::t('app', 'Delete')?>" data-id="<?php echo $comment->id; ?>" class="btn btn-danger btn-xs"><i class="fa fa-times"></i> <?=Yii::t('app', 'Delete')?></a>
         <?php endif; ?>
     </div>
 
