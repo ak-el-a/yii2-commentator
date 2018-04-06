@@ -1,5 +1,5 @@
 <?php
-namespace mickey\commentator\extensions\timepicker;
+namespace akela\commentator\extensions\timepicker;
 use Yii;
 use CJavaScript;
 use CWidget;

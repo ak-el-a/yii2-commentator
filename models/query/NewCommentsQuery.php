@@ -1,7 +1,7 @@
 <?php
 
-namespace mickey\commentator\models\query;
-use mickey\commentator\models\NewComments;
+namespace akela\commentator\models\query;
+use akela\commentator\models\NewComments;
 
 /**
  * This is the ActiveQuery class for [[\common\models\Comment]].

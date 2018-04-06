@@ -1,6 +1,6 @@
 <?php
-use mickey\commentator\helpers\CHelper as CHelper;
-use mickey\commentator\models\Comment as Comment;
+use akela\commentator\helpers\CHelper as CHelper;
+use akela\commentator\models\Comment as Comment;
 use yii\grid\GridView;
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;

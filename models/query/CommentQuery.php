@@ -1,7 +1,7 @@
 <?php
 
-namespace mickey\commentator\models\query;
-use mickey\commentator\models\Comment;
+namespace akela\commentator\models\query;
+use akela\commentator\models\Comment;
 use yii\helpers\Url;
 
 /**

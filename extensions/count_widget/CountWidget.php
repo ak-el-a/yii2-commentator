@@ -1,6 +1,6 @@
 <?php
-namespace mickey\commentator\extensions\count_widget;
-use mickey\commentator\helpers\CHelper as CHelper;
+namespace akela\commentator\extensions\count_widget;
+use akela\commentator\helpers\CHelper as CHelper;
 use yii\base\Widget;
 use yii\helpers\Html;
 

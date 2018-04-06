@@ -1,6 +1,6 @@
 <?php
-namespace mickey\commentator\models;
-use mickey\commentator\models\query\NewCommentsQuery;
+namespace akela\commentator\models;
+use akela\commentator\models\query\NewCommentsQuery;
 /**
  * This is the model class for table "new_comments".
  *

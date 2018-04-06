@@ -1,16 +1,16 @@
 {
-    "name": "mickeyur/yii2-commentator",
+    "name": "ak-el-a/yii2-commentator",
     "description": "Yii-2 comments module",
     "authors": [
         {
-            "name": "mickeyur",
-            "email": "mickey.ur@gmail.com"
+            "name": "Helen",
+            "email": "elena.motynha@gmail.com"
         }
     ],
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-            "mickey\\commentator\\": ""
+            "akela\\commentator\\": ""
         }
     }
 }

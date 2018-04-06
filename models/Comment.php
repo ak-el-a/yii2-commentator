@@ -1,7 +1,7 @@
 <?php
-namespace mickey\commentator\models;
-use mickey\commentator\models\NewComments as NewComments;
-use mickey\commentator\models\query\CommentQuery;
+namespace akela\commentator\models;
+use akela\commentator\models\NewComments as NewComments;
+use akela\commentator\models\query\CommentQuery;
 use Yii;
 use yii\db\Query;
 

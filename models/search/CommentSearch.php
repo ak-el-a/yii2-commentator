@@ -1,11 +1,11 @@
 <?php
 
-namespace mickey\commentator\models\search;
+namespace akela\commentator\models\search;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use mickey\commentator\models\Comment;
+use akela\commentator\models\Comment;
 
 /**
  * CommentSearch represents the model behind the search form about `common\models\Comment`.

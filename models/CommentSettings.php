@@ -1,5 +1,5 @@
 <?php
-namespace mickey\commentator\models;
+namespace akela\commentator\models;
 /**
  * This is the model class for table "comment_settings".
  *

@@ -1,15 +1,15 @@
 <?php
-namespace mickey\commentator\controllers;
-use mickey\commentator\models\Comment as Comment;
-use mickey\commentator\models\NewComments as NewComments;
-use mickey\commentator\models\CommentSettings as CommentSettings;
-use mickey\commentator\models\query\CommentQuery;
-use mickey\commentator\models\search\CommentSearch;
+namespace akela\commentator\controllers;
+use akela\commentator\models\Comment as Comment;
+use akela\commentator\models\NewComments as NewComments;
+use akela\commentator\models\CommentSettings as CommentSettings;
+use akela\commentator\models\query\CommentQuery;
+use akela\commentator\models\search\CommentSearch;
 use yii\web\Controller;
 use Yii;
 use yii\base\View;
 use yii\widgets\ActiveForm;
-use mickey\commentator\CommentatorAsset;
+use akela\commentator\CommentatorAsset;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\filters\AccessRule;
@@ -27,7 +27,7 @@ class AdminController extends Controller
 //TODO не нравится
         \Yii::$app->view->registerCssFile(
             \Yii::$app->assetManager->publish(
-                \Yii::getAlias('@vendor/mickeyur/yii2-commentator/assets/css/styles.css')
+                \Yii::getAlias('@vendor/ak-el-a/yii2-commentator/assets/css/styles.css')
         )[1]
 		);
     }

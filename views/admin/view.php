@@ -1,5 +1,5 @@
 <?php
-use mickey\commentator\helpers\CHelper as CHelper;
+use akela\commentator\helpers\CHelper as CHelper;
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 use yii\helpers\Url;

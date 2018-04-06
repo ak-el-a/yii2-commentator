@@ -1,7 +1,7 @@
 <?php
-namespace mickey\commentator\helpers;
-use mickey\yii2_commentator\models\NewComments as NewComments;
-use mickey\yii2_commentator\models\Comment as Comment;
+namespace akela\commentator\helpers;
+use akela\yii2_commentator\models\NewComments as NewComments;
+use akela\yii2_commentator\models\Comment as Comment;
 use Yii;
 
 class CHelper

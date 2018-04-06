@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace mickey\commentator;
+namespace akela\commentator;
 
 use Yii;
 use yii\web\AssetBundle;

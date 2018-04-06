@@ -1,13 +1,13 @@
-composer.phar require mickeyur/yii2-commentator:dev-master
+composer.phar require ak-el-a/yii2-commentator:dev-master
 
-yii migrate/up --migrationPath=@vendor/mickeyur/yii2-commentator/migrations
+yii migrate/up --migrationPath=@vendor/akelaur/yii2-commentator/migrations
 
 
    'modules' => [
       ...
       
         'comments' => [
-            'class' => 'mickey\commentator\Module',
+            'class' => 'akela\commentator\Module',
             'userModelClass' => 'common\models\User',
             'isSuperuser' => 'Yii::$app->user->identity->isAdmin',
             'userEmailField' => 'email',

@@ -1,7 +1,7 @@
 <?php
-namespace mickey\commentator\extensions\comments_widget;
+namespace akela\commentator\extensions\comments_widget;
 use Yii;
-use mickey\commentator\models\Comment as Comment;
+use akela\commentator\models\Comment as Comment;
 use yii\base\Widget;
 use yii\web\Controller;
 
@@ -110,7 +110,7 @@ class CommentsWidget extends Widget
     public function publishAssets()
     {
         $url = Yii::$app->getAssetManager()->publish(
-            Yii::getAlias('@vendor/mickeyur/yii2-commentator/extensions/comments_widget/assets'));
+            Yii::getAlias('@vendor/ak-el-a/yii2-commentator/extensions/comments_widget/assets'));
 
         Yii::$app->view->registerCssFile($url[1] . '/css/styles.css');
         Yii::$app->view->registerJsFile($url[1] . '/js/script.js', ['depends' => 'yii\web\JqueryAsset']);

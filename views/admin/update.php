@@ -1,5 +1,5 @@
 <?php
-use mickey\commentator\helpers\CHelper as CHelper;
+use akela\commentator\helpers\CHelper as CHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 ?>
@@ -39,7 +39,7 @@ use yii\widgets\ActiveForm;
 
         <div class="form-group">
 <!--            --><?php //echo $form->labelEx($model,'created'); ?>
-<!--            --><?php //$this->widget('mickey\yii_commentator\extensions\timepicker\Timepicker', array(
+<!--            --><?php //$this->widget('akela\yii_commentator\extensions\timepicker\Timepicker', array(
 //                'model' => $model,
 //                'name' => 'custom_created',
 //                'options' => array(

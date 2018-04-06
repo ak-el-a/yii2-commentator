@@ -1,5 +1,5 @@
-<?php use mickey\commentator\helpers\CHelper as CHelper; ?>
-<?php use mickey\commentator\models\NewComments as NewComments; ?>
+<?php use akela\commentator\helpers\CHelper as CHelper; ?>
+<?php use akela\commentator\models\NewComments as NewComments; ?>
 
 <a name="comment_<?php echo $comment->id; ?>"></a>
 

@@ -1,12 +1,12 @@
 <?php
-namespace mickey\commentator\controllers;
+namespace akela\commentator\controllers;
 use Yii;
 use yii\web\Controller;
 use yii\web\Session;
 use yii\widgets\ActiveForm;
-use mickey\commentator\models\Comment as Comment;
-use mickey\commentator\helpers\CHelper as CHelper;
-use mickey\commentator\extensions\comments_widget\CommentsWidget as CommentsWidget;
+use akela\commentator\models\Comment as Comment;
+use akela\commentator\helpers\CHelper as CHelper;
+use akela\commentator\extensions\comments_widget\CommentsWidget as CommentsWidget;
 use yii\web\Response;
 
 class HandlerController extends Controller

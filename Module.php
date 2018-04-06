@@ -1,6 +1,6 @@
 <?php
-namespace mickey\commentator;
-use mickey\commentator\models\CommentSettings as CommentSettings;
+namespace akela\commentator;
+use akela\commentator\models\CommentSettings as CommentSettings;
 use yii\base\Module as BaseModule;
 use Yii;
 
@@ -116,7 +116,7 @@ class Module extends BaseModule
     /**
      * @var string пространство имён контроллера
      */
-    public $controllerNamespace = 'mickey\commentator\controllers';
+    public $controllerNamespace = 'akela\commentator\controllers';
 
     /**
      * Инициализация модуля
